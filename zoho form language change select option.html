@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+    <div style="display: flex;padding-left:512px">
+        <select id="select_option" onchange="change_url()" style="margin: 0 auto;padding: 4px 8px;font-size: 15px;border-radius: 4px;background: #00afd7;color: white;border-color: #00afd7;outline-color: #00afd7;">
+            <option value="" selected>Change Language</option>
+            <option value="?zf_lang=fr">France</option>
+            <option value="?zf_lang=en">English</option>
+            <option value="?zf_lang=it">Italy</option>
+        </select>
+    </div>
+
+    <div id="z_form">
+        <iframe frameborder="0" style="height:500px;width:99%;border:none;"
+            src='https://forms.zohopublic.com/coolag/form/ReparaturAnmeldeformular2022DEUTSCH/formperma/DIvIEAQo4dK8w9S3_wAAmokOHYD3zMb2eYTeA37UyGM'></iframe>
+    </div>
+
+    <script>
+        function change_url() {
+            var select = document.getElementById("select_option")
+            var value = select.options[select.selectedIndex].value;
+            document.getElementById("z_form").innerHTML =
+                `
+            <iframe frameborder="0" style="height:500px;width:99%;border:none;" src='https://forms.zohopublic.com/coolag/form/ReparaturAnmeldeformular2022DEUTSCH/formperma/DIvIEAQo4dK8w9S3_wAAmokOHYD3zMb2eYTeA37UyGM${value}'></iframe>
+            `
+                ;
+        }
+    </script>
+
+</body>
+
+</html>
